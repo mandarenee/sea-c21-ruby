@@ -8,3 +8,8 @@
 # divisible by 400 (e.g. 2000).
 #
 # Tip: I expect you to use a loop and a few modulo operations.
+year = 1900
+while year <= 2000
+  puts year if year % 100 != 0 || year % 400 == 0 if year % 4 == 0
+  year += 1
+end
