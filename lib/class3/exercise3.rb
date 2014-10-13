@@ -37,7 +37,7 @@ count = 1
 while count <= 3
   input = gets.chomp
   if input == 'BYE'
-    # break if count == 3
+    break if count == 3
     count += 1
     puts 'Nana: HOW\'S SCHOOL GOING?'
   elsif input == input.upcase
