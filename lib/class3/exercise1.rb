@@ -16,6 +16,7 @@
 #   Go to the store and buy some more, 3 bottles of beer on the wall!
 #
 # TIP: I expect you to use a loop.
+
 num = 3
 bottle = 'bottles'
 
