@@ -1,26 +1,37 @@
 #!/usr/bin/env ruby
 #
-# Section 8.3 on page 56
 # 5 points
 #
-# Rewrite your table of contents program on page 32. Start the program with an
-# array holding all of the information for your table of contents (chapter
-# names, page numbers, and so on). Then print out the information from the array
-# in a beautifully formatted table of contents like this:
+# Write a program that displays the following table of 90's Hip-Hop hits:
 #
-#                 Table of Contents
+#   $ ruby exercise2.rb
+#   Can I Kick It?      A Tribe Called Quest     1991
+#   Rump Shaker         Wreckx-n-Effect          1992
+#   Check Yo Self       Ice Cube                 1993
+#   Regulate            Warren G & Nate Dogg     1994
+#   I Got 5 On It       Luniz                    1995
+#   Ready Or Not        The Fugees               1996
 #
 # Chapter 1:  Getting Started                page  1
 # Chapter 2:  Numbers                        page  9
 # Chapter 3:  Letters                        page 13
 
-chapter = ["Chapter 1:", "Chapter 2:", "Chapter 3:"]
-content = ["Getting Started", "Numbers", "Letters"]
-page = ["page  1", "page  9", "page 13"]
-num = 0
+n = 0
+a =
+  ['Can I Kick It?', 'Rump Shaker', 'Check Yo Self', 'Regulate',
+   'I Got 5 On It', 'Ready Or Not']
+b =
+  ['A Tribe Called Quest', 'Wreckx-n-Effect', 'Ice Cube',
+   'Warren G & Nate Dogg', 'Luniz', 'The Fugees']
+c = [1991, 1992, 1993, 1994, 1995, 1996]
 
-puts "Table of Contents \n".center(50)
-while num != 3
-  puts "#{chapter[num]}  #{content[num]}".ljust(30) + "#{page[num]}".rjust(20)
-  num += 1
+until n == 6
+  puts "#{a[n]}".ljust(20) + "#{b[n]}".ljust(26) + "#{c[n]}".to_s.rjust(4)
+  n += 1
 end
+
+# TIP #1: Hold all of the information -- song, artist, and year -- in an array.
+#
+# TIP #2: Use the `string.ljust` method from class 2 exercise 7.
+#
+# TIP #3: The width of each line is 50 characters.
