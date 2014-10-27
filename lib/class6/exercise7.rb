@@ -32,7 +32,7 @@ def load
 end
 
 def remove(key)
-  load[key.to_sym] # fix me
+  load[key.to_sym]
 end
 
 input = ARGV[0]
