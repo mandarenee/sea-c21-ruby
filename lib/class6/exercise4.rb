@@ -32,15 +32,22 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
 end
 
 def load
-  { fix: 'me' }
+  yaml_string = File.read database
+  YAML.load yaml_string
 end
 
 def display(pairs)
-  pairs # fix me
+  pairs.each do |title, answer|
+    if answer.is_a? String
+      puts ":#{title} => \"#{answer}\""
+    else
+      puts ":#{title} => #{answer}"
+    end
+  end
 end
 
 person = load
