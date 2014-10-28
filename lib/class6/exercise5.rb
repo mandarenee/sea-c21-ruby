@@ -26,12 +26,11 @@ def database
 end
 
 def load
-  yaml_string = File.read database
-  YAML.load yaml_string
+  YAML.load(File.read (database))
 end
 
 def find(key)
-  load[key]
+  load[key.to_sym]
 end
 
 input = ARGV[0]

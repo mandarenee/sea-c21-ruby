@@ -36,18 +36,11 @@ def database
 end
 
 def load
-  yaml_string = File.read database
-  YAML.load yaml_string
+  YAML.load(File.read (database))
 end
 
 def display(pairs)
-  pairs.each do |title, answer|
-    if answer.is_a? String
-      puts ":#{title} => \"#{answer}\""
-    else
-      puts ":#{title} => #{answer}"
-    end
-  end
+  pairs.each { |k, v| puts "#{k.inspect} => #{v.inspect}" }
 end
 
 person = load

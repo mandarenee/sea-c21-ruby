@@ -26,17 +26,13 @@ def database
 end
 
 def load
-  yaml_string = File.read database
-  YAML.load yaml_string
+  YAML.load(File.read (database))
 end
 
 def update(key, value)
-  if load[key]
-    load[key] = value
-    File.write(database, (load.merge(load[key] = value).to_yaml))
-  else
-    File.write(database, (load.merge(key => value).to_yaml))
-  end
+  person = load
+  person = person.merge(key.to_sym => value)
+  File.write(database, person.to_yaml)
 end
 
 input1, input2 = ARGV

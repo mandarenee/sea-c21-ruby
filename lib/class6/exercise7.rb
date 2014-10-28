@@ -27,12 +27,14 @@ def database
 end
 
 def load
-  yaml_string = File.read database
-  YAML.load yaml_string
+  YAML.load_file(database)
 end
 
 def remove(key)
-  load[key.to_sym]
+  person = load
+  value = person.delete(key.to_sym)
+  File.write(database, person.to_yaml)
+  value
 end
 
 input = ARGV[0]
