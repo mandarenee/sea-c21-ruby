@@ -36,5 +36,26 @@
 # should stop and rethink your approach.
 
 class OrangeTree
-  # replace me
+  def initialize(num = 50)
+    @fruit = num
+  end
+
+  def fruit
+    @fruit.to_i
+  end
+
+  def pick!(num = 1)
+    return nil if num > @fruit.to_i
+    @fruit -= num
+    @fruit.to_i
+  end
+
+  def pick(num = 1)
+    return nil if num > @fruit.to_i
+    OrangeTree.new(@fruit.to_i - num)
+  end
+
+  def ==(other)
+    other == @fruit
+  end
 end

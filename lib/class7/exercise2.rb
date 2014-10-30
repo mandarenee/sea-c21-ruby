@@ -16,5 +16,11 @@
 #     orange_tree.fruit  #=> 50
 
 class OrangeTree
-  # fix me
+  def initialize
+    @fruit = 50
+  end
+
+  def fruit
+    @fruit.to_i
+  end
 end

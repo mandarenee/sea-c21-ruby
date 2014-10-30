@@ -36,7 +36,7 @@ def database
 end
 
 def load
-  YAML.load(File.read (database))
+  YAML.load(File.read(database))
 end
 
 def display(pairs)

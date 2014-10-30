@@ -23,5 +23,17 @@
 #     orange_tree.fruit      #=> 44
 
 class OrangeTree
-  # replace me
+  def initialize
+    @fruit = 50
+  end
+
+  def fruit
+    @fruit.to_i
+  end
+
+  def pick!(num = 1)
+    return nil if num > @fruit.to_i
+    @fruit -= num
+    @fruit.to_i
+  end
 end
