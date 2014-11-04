@@ -22,11 +22,11 @@
 
 class Array
   def each_without_yolo(&block)
-    block.each do |word|
+    each do |word|
       if yolo?(word)
-        puts 'Life is too short'
+        block.call('Life is too short')
       else
-        puts "#{word}"
+        block.call(word)
       end
     end
   end
