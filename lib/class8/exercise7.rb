@@ -22,6 +22,20 @@
 
 class Array
   def each_without_yolo(&block)
-    block # fix me
+    block.each do |word|
+      if yolo?(word)
+        puts 'Life is too short'
+      else
+        puts "#{word}"
+      end
+    end
+  end
+
+  def yolo?(word)
+    if word == 'yolo' || word == 'YOLO'
+      return true
+    else
+      return false
+    end
   end
 end
